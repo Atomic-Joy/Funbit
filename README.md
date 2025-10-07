@@ -34,9 +34,9 @@ Project Initialization: Establish a React project environment (e.g., using Vite 
 
 Dependency Installation: Ensure the core React and Lucide-React packages are installed.
 
-'''bash
-npm install react react-dom lucide-react
-'''
+```bash
+npm install lucide-react
+```
 
 Integration: Integrate the App.jsx content into your main application file (e.g., src/App.jsx).
 
