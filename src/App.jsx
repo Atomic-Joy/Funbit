@@ -7,7 +7,6 @@ const fetchWithBackoff = async (url, options = {}, retries = 5, delay = 1000) =>
         try {
             const response = await fetch(url, options);
             if (!response.ok) {
-                // Throw an error if the response status is not OK (e.g., 404, 500)
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return await response.json();
@@ -15,7 +14,6 @@ const fetchWithBackoff = async (url, options = {}, retries = 5, delay = 1000) =>
             if (i === retries - 1) {
                 throw error;
             }
-            // Wait for the calculated delay (1s, 2s, 4s, 8s, 16s...)
             await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i)));
         }
     }
@@ -186,7 +184,7 @@ const App = () => {
     
     const iconLinks = [
         { Icon: Info, title: "Powered by Multiple APIs", href: "https://v2.jokeapi.dev/" },
-        { Icon: Github, title: "View Project Source", href: "https://github.com/Atomic-Joy" },
+        { Icon: Github, title: "View Project Source", href: "https://github.com/Atomic-Joy/Funbit" },
         { 
             Icon: isDarkMode ? Sun : Moon, 
             title: isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode", 
@@ -227,7 +225,10 @@ const App = () => {
                         className="p-8 md:p-12 w-full md:w-3/5 flex flex-col justify-between relative flex-none transition-colors duration-500"
                     >
                         {/* Icons */}
-                        <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 flex flex-col space-y-3">
+                        <div className="absolute 
+                                        top-4 left-1/2 transform -translate-x-1/2 
+                                        flex flex-row space-x-3 
+                                        md:top-1/2 md:left-0 md:-translate-y-1/2 md:flex-col md:space-x-0 md:space-y-3">
                             {iconLinks.map((item, index) => {
                                 const Element = item.isToggle ? 'button' : 'a';
                                 return (
