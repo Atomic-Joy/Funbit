@@ -28,9 +28,17 @@ This is a professional, single-page React application designed to retrieve and d
 ## Deployment and Setup
 - This is a single-file React component intended for a sandbox or Canvas environment. Local deployment requires a standard Node.js/npm environment.
 
-- File Acquisition: Save the provided contents of the App.jsx component file.
+- Run this command to get the files
 
-- Project Initialization: Establish a React project environment (e.g., using Vite or Create React App).
+```bash
+git clone https://github.com/Atomic-Joy/Funbit.git
+```
+
+- Inside the project directory run this 
+
+```bash
+npm install
+```
 
 - Dependency Installation: Ensure the core React and Lucide-React packages are installed.
 
